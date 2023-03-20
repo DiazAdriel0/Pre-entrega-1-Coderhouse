@@ -1,27 +1,30 @@
 //Registro de usuario
+let usuario;
+let contrasenia;
+let edad;
 
-alert(`Haga click en el botón "aceptar" para registrarse`);
-
-let usuario = prompt("Elija su nombre de usuario");
+do{
+usuario = prompt("Elija su nombre de usuario");
 
 while ((usuario == "") || (usuario == null)){
     alert("No ingresó ningun nombre de usuario");
     usuario = prompt("Elija su nombre de usuario");
 }
 
-let contrasenia = Number(prompt("Elija su contraseña (Utilice solo números)"));
+contrasenia = Number(prompt("Elija su contraseña (Utilice solo números)"));
 
 while (isNaN(contrasenia) || (contrasenia == "") || (contrasenia == null)){
     alert("No ingresó una contraseña valida");
     contrasenia = prompt("Vuelva a ingresar su contraseña");
 }
 
-let edad = parseInt(prompt("Para ingresar a la plataforma debe ser mayor de edad, ¿Que edad tiene?"));
+edad = parseInt(prompt("Para ingresar a la plataforma debe tener 12 años o mas, ¿Que edad tiene?"));
 
-while (edad < 18) {
-    alert("No puede ingresar a la plataforma por ser menor de edad");
-    edad = prompt("Mienta con su edad")
+if (edad < 12) {
+    alert("No puede ingresar a la plataforma por ser menor de 12 años");
+    alert("Pidale a otro usuario que se registre")
 }
+}while (edad < 12)
 
 // Algoritmo para comprobar si un numero es par o impar
 
